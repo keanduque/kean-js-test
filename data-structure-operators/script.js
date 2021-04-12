@@ -56,13 +56,133 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*
+//////////////////////////////
+//Maps : Iteration
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct 🎉"],
+  [false, "Try Again!"],
+]);
+
+console.log(question); // the output is same as Object with Key value pairs
+
+//Convert Object to Map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+
+console.log(hoursMap);
+
+// Quiz app
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+//const answer = Number(prompt(question.get("question")));
+const answer = 3;
+console.log(answer);
+const checkAnswer = question.get("correct") === answer;
+console.log(question.get(checkAnswer));
+
+//Convert Map to Array
+console.log([...question]); //unpacking using Spread Operator
+//console.log([...question.entries()]); no need same as the previous log
+console.log([...question.keys()]);
+console.log([...question.values()]);
+ */
+/* 
+//////////////////////////////
+//Maps Fundamentals - data structure to map values to keys.
+// the keys can have any type. can be huge.
+// in Objects the keys is always strings. but in Maps you can use any type of keys. it can be Objects, arrays or other maps
+
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+rest.set(2, "Lisbon, Portugal");
+console.log(rest);
+
+//rest chaining. calling the set method returns the updated map.
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open :D")
+  .set(false, "We are close :(");
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+//rest.clear(); //clearing maps
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+rest.set(document.querySelector("h1"), "Heading");
+console.log(rest);
+console.log(rest.size);
+//get the data
+console.log(rest.get(arr));
+ */
+/* 
+//////////////////////////////
+//Sets - collecion of unique values, never have duplicates - data structure
+// in sets no indexes. no way of getting values out of the sets. if you need just use array instead of sets.
+// NOTE : not intended to replace array.
+// use this when working with UNIQUE values.
+const ordersSet = new Set([
+  //iterable array
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+
+console.log(ordersSet);
+
+console.log(new Set("Kean"));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.has("Bread"));
+ordersSet.add("Garlic Bread");
+ordersSet.add("Garlic Bread");
+ordersSet.delete("Risotto");
+//ordersSet.clear(); //clear the content inside the sets
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+//UseCase 1 : Ex. remove duplicate values of array
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUnique = [...new Set(staff)]; //converting sets to Array using Spread Operator
+console.log(staffUnique);
+console.log(new Set(staff).size);
+
+//count letters in the string.
+console.log(new Set("keanduque").size); //remove duplicate
+ */
+//retrieving values out of the sets.
+//console.log(ordersSet[0]); // not work undefined.
+
 /* 
 //////////////////////////////
 //Looping Objects : Object.keys, values, and entries
 
 //Property NAMES
 const properties = Object.keys(openingHours);
-console.log(properties);
+console.log("properties", properties);
 
 let openStr = `We are open on ${properties.length} days: `;
 
@@ -73,11 +193,11 @@ console.log(openStr);
 
 //Property VALUES
 const values = Object.values(openingHours);
-console.log(values);
+console.log("values", values);
 
 //Entire Object with Keys and Values
 const entries = Object.entries(openingHours);
-console.log(entries);
+console.log("entries", entries);
 
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);

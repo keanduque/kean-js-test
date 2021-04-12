@@ -66,3 +66,30 @@ const game = {
     team2: 6.5,
   },
 };
+
+//1
+for (let [goal, player] of game.scored.entries()) {
+  console.log(`Goal ${goal + 1}: ${player}`);
+}
+
+//2
+let avg = 0;
+let sum = 0;
+let properties = Object.keys(game.odds);
+for (let odd of Object.values(game.odds)) {
+  sum += odd;
+  avg = sum / properties.length;
+}
+console.log(`The Average Odd is : ${avg}`);
+
+//3
+for (let [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} : ${odd}`);
+}
+
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
