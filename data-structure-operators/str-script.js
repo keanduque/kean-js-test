@@ -8,7 +8,7 @@ const flights =
 //              Arrival from BRU to FAO (11h45)
 //   🔴 Delayed Arrival from HEL to FAO (12h05)
 //            Departure from FAO to LIS (12h30)
-
+/* 
 /////////////////////////////////////////////
 // String Method Practice
 
@@ -24,7 +24,7 @@ for (const flight of flights.split("+")) {
   const output = `${msgSymbol} from ${fromCode} to ${toCode} (${hTime})`;
   console.log(output.padStart(50, " "));
 }
-
+ */
 /* 
 /////////////////////////////////////////////
 // Working with Strings Part - 3
