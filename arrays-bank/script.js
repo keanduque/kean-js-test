@@ -250,6 +250,7 @@ console.log(names); */
 
 //SOME METHOD - check the conditions - Specify the Condition
 //console.log(movements.some(mov => mov === -130));
+// if you read ANY its equivalent to some
 const anyDeposits = movements.some(mov => mov > 5000);
 //console.log(anyDeposits); //false
 

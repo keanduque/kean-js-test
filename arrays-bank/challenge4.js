@@ -67,10 +67,30 @@ const ownersEatTooLittle = dogs
   .flatMap(owner => owner.owners);
 
 //4
-const ownersEatTooMuchTxt = ownersEatTooMuch
-  .map((owner, ctr) =>
-    ctr + 1 === ownersEatTooMuch.length ? `${owner}'s` : `${owner}`
-  )
-  .join(' and ');
-console.log(ownersEatTooMuchTxt);
-console.log(ownersEatTooLittle);
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too much!`);
+
+//5
+const ownersBoolExactFood = dogs.some(
+  dog => dog.curFood === dog.recommendedFood
+);
+console.log(ownersBoolExactFood);
+
+//6
+//current > (recommended * 0.90) && current < (recommended * 1.10).
+const checkEatingOkay = dog =>
+  dog.curFood > dog.recommendedFood * 0.9 &&
+  dog.curFood < dog.recommendedFood * 1.1;
+
+console.log(dogs.some(checkEatingOkay));
+
+//7
+const dogsEatingOkFood = dogs.filter(checkEatingOkay);
+console.log(dogsEatingOkFood);
+
+//8
+const dogSort = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+
+console.log(dogSort);
