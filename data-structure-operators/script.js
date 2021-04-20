@@ -301,7 +301,7 @@ restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
 /* 
 //////////////////////////////
 //Rest Pattern and Parameters - same as spread operators but opposite of the Spread Operators.
-//Rest Operator - Collect multiple elements and condence them into an array, unpack an array, Collects elements that are unused in the De-structuring assignment
+//Rest Operator - Collect multiple elements and condence them into an array, pack elements on an array, Collects elements that are unused in the De-structuring assignment
 //Spread Operator - to build new arrays or to pass multiple values into a function. to expand array into individual elements. pack elements into an array
 
 // 1) Destructuring
