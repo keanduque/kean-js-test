@@ -1,3 +1,5 @@
+"use strict";
+
 //////////////////////////////
 // Closer Look at Functions
 // Coding Challenge #1

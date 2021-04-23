@@ -1,8 +1,9 @@
-//////////////////////////////
-// Closer Look at Functions
-// Coding Challenge #2
+"use strict"(
+  //////////////////////////////
+  // Closer Look at Functions
+  // Coding Challenge #2
 
-/* 
+  /* 
 This is more of a thinking challenge than a coding challenge 🤓
 Your tasks:
     1. Take the IIFE below and at the end of the function attach an event listener that changes the color of the selected h1 element ('header') to blue, each time the body element is clicked. Do not select the h1 element again!
@@ -11,15 +12,16 @@ Your tasks:
 
 */
 
-(function () {
-  //gone in execution
-  //--birthplace
-  const header = document.querySelector("h1"); //gone in Execution // backpack of this function.
-  header.style.color = "red";
+  function () {
+    //gone in execution
+    //--birthplace
+    const header = document.querySelector("h1"); //gone in Execution // backpack of this function.
+    header.style.color = "red";
 
-  //even the environment is gone. but the function below is attached on the body elements.
-  document.body.addEventListener("click", function () {
-    header.style.color = "blue"; //header is in the backpack of this function
-  });
-  //--birthplace
-})();
+    //even the environment is gone. but the function below is attached on the body elements.
+    document.body.addEventListener("click", function () {
+      header.style.color = "blue"; //header is in the backpack of this function
+    });
+    //--birthplace
+  }
+)();
